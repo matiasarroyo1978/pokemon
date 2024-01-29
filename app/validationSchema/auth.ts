@@ -11,7 +11,7 @@ const loginSchema = Yup.object({
     .required("Please fill this field"),
 });
 
-export const loginValidation = () =>
+export const useLoginValidation = () =>
   useForm({
     resolver: yupResolver(loginSchema),
   });
@@ -28,22 +28,7 @@ const registerSchema = Yup.object({
     .oneOf([Yup.ref("password")], "Entered passwords do not match"),
 });
 
-export const registerValidation = () =>
+export const useRegisterValidation = () =>
   useForm({
     resolver: yupResolver(registerSchema),
-  });
-  const profileSchema = Yup.object({
-    email: Yup.string()
-      .email("Please enter a valid email")
-      .required("Please fill this field"),
-    password: Yup.string()
-      .required("Please fill this field")
-      .min(6, "Please enter minimum 6 characters for password"),
-    cnfPassword: Yup.string() 
-      .required("Please fill this field")
-      .oneOf([Yup.ref("password")], "Entered passwords do not match"),
-  });
-  export const profileValidation = () =>
-  useForm({
-    resolver: yupResolver(profileSchema),
   });

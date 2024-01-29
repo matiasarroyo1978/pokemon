@@ -4,7 +4,7 @@ import InputField from "../components/InputField";
 import SubmitButton from "../components/Button";
 import Link from "next/link";
 import { LOGIN_ROUTE } from "../constants/route";
-import { registerValidation } from "../validationSchema/auth";
+import { useRegisterValidation } from "../validationSchema/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ const Register = () => {
     register,
     formState: { errors },
     reset,
-  } = registerValidation();
+  } = useRegisterValidation();
   const submitForm = (values: any) => {
     console.log("register form values ", values);
     createUserWithEmailAndPassword(auth, values.email, values.password)
