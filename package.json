@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@firebase/auth": "^1.5.1",
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/resolvers": "^3.3.4",
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-query-devtools": "^4.29.12",
@@ -23,6 +26,7 @@
     "next": "^14",
     "next-themes": "npm:@wits/next-themes",
     "react": "18.2.0",
+    "react-awesome": "^0.0.2",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.49.3",
     "react-icons": "^4.9.0",

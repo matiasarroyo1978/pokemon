@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../pokemon/components/InputField";
 import SubmitButton from "../pokemon/components/Button";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import { useLoginValidation } from "../validationSchema/auth";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 interface LoginFormValues {
   email: string;
@@ -16,6 +18,7 @@ interface LoginFormValues {
 
 const Login = () => {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
   const {
     handleSubmit,
     register,
@@ -74,15 +77,27 @@ const Login = () => {
             name="email"
             label="Email"
           />
-          <InputField
-            register={register}
-            error={errors.password}
-            type="password"
-            placeholder="Enter your password here"
-            name="password"
-            label="Password"
-          />
-          <SubmitButton label="Submit" />
+          <div className="relative mt-2">
+            <InputField
+              register={register}
+              error={errors.password}
+              type={showPassword ? "text" : "password"} // Alternar entre "text" y "password" según el estado de visualización de la contraseña
+              placeholder="Enter your password here"
+              name="password"
+              label="Password"
+            />
+            {/* Agregar el botón de alternar la visibilidad de la contraseña */}
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute top-1/2 inset-y-0 right-3 flex items-center text-gray-300">
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
+          {/* Botón de enviar */}
+          <div className="mt-6 mb-4 flex justify-center">
+            <SubmitButton label="Submit" onClick={handleSubmit(submitForm)} />
+          </div>
         </form>
         <div className="h-20 mx-auto">
           <span className="text-sm text-gray-600 font-mono">
