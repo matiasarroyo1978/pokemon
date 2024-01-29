@@ -14,7 +14,7 @@ export default function DarkModeToggle() {
     } else {
         ref.current.checked = false;
     }
-    }, []);
+    }, [theme]);
         
 
   const handleDarkMode = () => {
