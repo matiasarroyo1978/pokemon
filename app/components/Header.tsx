@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../context/FirebaseAuthContext";
 import {
   LOGIN_ROUTE,
-  PROFILE_ROUTE,
   REGISTER_ROUTE,
 } from "../constants/route";
 
@@ -55,11 +54,8 @@ const Header = () => {
           {/* Mostrar enlaces de Profile y Logout si está en la página de los pokemones */}
           {isPokemonPage && (
             <>
-              <Link href={PROFILE_ROUTE}>
-                <li>Profile</li>
-              </Link>
               <Link href="">
-                <li onClick={handleLogout}>Logout</li>
+                <li onClick={handleLogout}>LogOut</li>
               </Link>
             </>
           )}
