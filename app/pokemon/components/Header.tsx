@@ -4,10 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../context/FirebaseAuthContext";
-import {
-  LOGIN_ROUTE,
-  REGISTER_ROUTE,
-} from "../../constants/route";
+import { LOGIN_ROUTE, REGISTER_ROUTE } from "../../constants/route";
 
 const Header = () => {
   const router = useRouter();
@@ -40,16 +37,16 @@ const Header = () => {
   return (
     <header className="h-20 flex bg-gradient-to-br from-yellow-400/20 via-blue-300 to-purple-400/60 px-10 drop-shadow-[0px_2px_10px_rgba(2,0,0)]">
       <nav className="w-full flex justify-between items-center text-black font-serif text-xl">
-          <div>
-            <Image
-              src="/logo.png"
-              alt="Pokemon Logo"
-              height={36}
-              width={96}
-              priority
-              style={{ width: "auto", height: "auto" }}
-            />
-          </div>
+        <div>
+          <Image
+            src="/logo.png"
+            alt="Pokemon Logo"
+            height={36}
+            width={96}
+            priority
+            style={{ height: "auto", width: "auto" }}
+          />
+        </div>
         <ul className="flex gap-4">
           {/* Mostrar enlaces de Profile y Logout si está en la página de los pokemones */}
           {isPokemonPage && (
