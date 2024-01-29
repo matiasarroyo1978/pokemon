@@ -47,7 +47,7 @@ const Header = () => {
               height={36}
               width={96}
               priority
-              style={{ width: "auto" }}
+              style={{ width: "auto", height: "auto" }}
             />
           </div>
         <ul className="flex gap-4">
