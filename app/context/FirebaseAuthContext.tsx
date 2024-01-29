@@ -1,6 +1,7 @@
+"use client";
 import React, { useContext, useState, useEffect, createContext } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, Auth, User } from "firebase/auth";
-
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, Auth, User } from "firebase/auth";
+import { auth } from "../firebase/config"
 export const AuthContext = createContext({} as any);
 
 export function useAuth() {
@@ -11,7 +12,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User | null>(null); // Especifica el tipo de currentUser
 
   const [loading, setLoading] = useState(true);
-  const auth = getAuth();
+  
 
   function signup(auth: Auth, email: string, password: string) {
     return createUserWithEmailAndPassword(auth, email, password);

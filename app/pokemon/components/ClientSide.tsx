@@ -1,4 +1,3 @@
-/** @format */
 "use client";
 import React, { useState } from "react";
 import Filters from "./Filters";

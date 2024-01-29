@@ -1,7 +1,6 @@
 /** @format */
-
 import Providers from "./Providers";
-import CustomRouter from "./components/CustomRouter";
+import Header from "./components/Header";
 import "./globals.css";
 import { ServerThemeProvider } from "next-themes";
 
@@ -20,10 +19,10 @@ export default function RootLayout({
       <html lang="en" style={{ scrollBehavior: "smooth" }}>
         <body>
           <Providers>
-            <main className="bg-color w-full h-full min-h-screen py-6">
-              <CustomRouter>{children}</CustomRouter>
-              {children}
-            </main>
+              <main className="bg-color w-full h-full min-h-screen py-6">
+                <Header/>
+                {children}
+              </main>
           </Providers>
         </body>
       </html>
