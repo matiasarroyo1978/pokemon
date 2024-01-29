@@ -13,7 +13,7 @@ export default function SearchBar( {handleSearch, searchTerm, setSearchTerm}: Pr
 
     React.useEffect(() => {
         handleSearch(searchTerm);
-    }, [searchTerm, handleSearch]);
+    }, [searchTerm]);
 
   return (
     <>
