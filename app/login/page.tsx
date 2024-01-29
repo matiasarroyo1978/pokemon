@@ -53,7 +53,7 @@ const Login = () => {
     }
   };
 
-  const message = "Don't forget to escape single quotes";
+  const message = "Don't have an account to log in?";
 
   return (
     <div className="h-screen flex justify-center items-center bg-gradient-to-br from-yellow-400/25 via-blue-300 to-purple-400/60">
