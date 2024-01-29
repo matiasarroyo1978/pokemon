@@ -1,5 +1,5 @@
 import React from "react";
-import { InputFieldT } from "../types/FormTypes";
+import { InputFieldT } from "../../types/FormTypes";
 
 function InputField({ type, name, placeholder, label, register, error }: InputFieldT) {
   return (

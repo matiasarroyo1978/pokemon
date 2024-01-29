@@ -1,6 +1,6 @@
 /** @format */
 import Providers from "./Providers";
-import Header from "./components/Header";
+import Header from "./pokemon/components/Header";
 import "./globals.css";
 import { ServerThemeProvider } from "next-themes";
 

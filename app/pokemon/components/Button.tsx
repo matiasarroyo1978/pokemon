@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubmitButtonT } from '../types/ButtonTypes'
+import { SubmitButtonT } from '../../types/ButtonTypes'
 
 function SubmitButton({label}: SubmitButtonT) {
   return (

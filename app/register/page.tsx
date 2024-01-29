@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import InputField from "../components/InputField";
-import SubmitButton from "../components/Button";
+import InputField from "../pokemon/components/InputField";
+import SubmitButton from "../pokemon/components/Button";
 import Link from "next/link";
 import { LOGIN_ROUTE } from "../constants/route";
 import { useRegisterValidation } from "../validationSchema/auth";
