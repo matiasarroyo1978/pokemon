@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import InputField from "../pokemon/components/InputField";
 import SubmitButton from "../pokemon/components/Button";
 import Link from "next/link";
-import { HOME_ROUTE, REGISTER_ROUTE } from "../constants/route";
 import { useLoginValidation } from "../validationSchema/auth";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -30,7 +29,7 @@ const Login = () => {
       // Iniciar sesión con Firebase
       await signInWithEmailAndPassword(auth, values.email, values.password);
       // Redirigir al usuario a la página de inicio
-      router.push(HOME_ROUTE);
+      router.push("/");
     } catch (error) {
       console.error("Error logging in:", error); // Agregar esta línea para imprimir el objeto de error completo
       let errorMessage = "Error logging in: ";
@@ -102,7 +101,7 @@ const Login = () => {
         <div className="h-20 mx-auto">
           <span className="text-sm text-gray-600 font-mono">
             {message}
-            <Link href={REGISTER_ROUTE}>
+            <Link href={'/register'}>
               <span className="text-blue-500 font-mono font-semibold text-md ml-2">
                 Register Here
               </span>

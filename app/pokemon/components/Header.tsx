@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../context/FirebaseAuthContext";
-import { LOGIN_ROUTE, REGISTER_ROUTE } from "../../constants/route";
 
 const Header = () => {
   const router = useRouter();
@@ -17,7 +16,7 @@ const Header = () => {
   useEffect(() => {
     if (!currentUser) {
       // Usuario deslogueado, redireccionar a la página de login
-      router.push(LOGIN_ROUTE);
+      router.push('/login');
     }
   }, [currentUser, router]); // Se ejecutará cada vez que currentUser cambie
   useEffect(() => {
@@ -28,7 +27,7 @@ const Header = () => {
     try {
       await logout();
       // Después de desloguearse, redireccionar a la página de login
-      router.push(LOGIN_ROUTE);
+      router.push('/login');
     } catch (error) {
       console.error("Error logging out:", error);
     }
@@ -59,10 +58,10 @@ const Header = () => {
           {/* Mostrar enlaces de Login y Register si no está en la página de los pokemones */}
           {!isPokemonPage && (
             <>
-              <Link href={LOGIN_ROUTE}>
+              <Link href={'/login'}>
                 <li>Login</li>
               </Link>
-              <Link href={REGISTER_ROUTE}>
+              <Link href={'/register'}>
                 <li>Register</li>
               </Link>
             </>

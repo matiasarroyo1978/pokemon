@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import InputField from "../pokemon/components/InputField";
 import SubmitButton from "../pokemon/components/Button";
 import Link from "next/link";
-import { LOGIN_ROUTE } from "../constants/route";
 import { useRegisterValidation } from "../validationSchema/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config";
@@ -26,7 +25,7 @@ const Register = () => {
       .then((response) => {
         alert("User registration successful.");
         reset();
-        router.push(LOGIN_ROUTE);
+        router.push('/login');
       })
       .catch((err) => {
         console.log("catch", err.message);
@@ -98,7 +97,7 @@ const Register = () => {
         <div className="h-20 mx-auto">
           <span className="text-sm text-gray-600 font-mono">
             Already have an account?
-            <Link href={LOGIN_ROUTE}>
+            <Link href={'/login'}>
               <span className="text-blue-500 font-mono font-semibold text-md ml-2">
                 Login Here
               </span>
